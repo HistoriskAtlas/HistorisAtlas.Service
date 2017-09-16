@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="service.historiskatlas.dk" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Rasmus\\Source\\Repos\\HistoriskAtlas\.Service\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Rasmus\\Source\\Repos\\HistoriskAtlas\.Service\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="hadb-Web.config Connection String" description="" value="" tags="" />
+  <parameter name="hadb5-Web.config Connection String" description="" value="" tags="" />
+  <parameter name="hadbStats-Web.config Connection String" description="" value="" tags="" />
+</parameters>

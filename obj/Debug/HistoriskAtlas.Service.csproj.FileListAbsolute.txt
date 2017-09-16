@@ -1,0 +1,6 @@
+C:\Users\Rasmus\Source\Repos\HistoriskAtlas.Service\bin\HistoriskAtlas.Service.dll.config
+C:\Users\Rasmus\Source\Repos\HistoriskAtlas.Service\bin\HistoriskAtlas.Service.dll
+C:\Users\Rasmus\Source\Repos\HistoriskAtlas.Service\bin\HistoriskAtlas.Service.pdb
+C:\Users\Rasmus\Source\Repos\HistoriskAtlas.Service\obj\Debug\HistoriskAtlas.Service.csprojResolveAssemblyReference.cache
+C:\Users\Rasmus\Source\Repos\HistoriskAtlas.Service\obj\Debug\HistoriskAtlas.Service.dll
+C:\Users\Rasmus\Source\Repos\HistoriskAtlas.Service\obj\Debug\HistoriskAtlas.Service.pdb

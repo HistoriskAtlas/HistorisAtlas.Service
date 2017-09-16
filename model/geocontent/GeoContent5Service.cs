@@ -75,7 +75,7 @@ namespace HistoriskAtlas.Service
                         //    while (drExts.Read())
                         //        geoContent.exts.Add(new GeoContentExt() { source = (byte)drExts["Source"], link = drExts["Link"].ToString() }); //"http://www.youtube.com/watch?v="
 
-                        using (SqlCommand cmdTexts = new SqlCommand("SELECT Ordering, Headline FROM Content, Text WHERE Content.ContentID = Text.ContentID AND GeoID = " + geoContent.id + " ORDER BY Ordering", conn))
+                        using (SqlCommand cmdTexts = new SqlCommand("SELECT Content.Ordering, Headline FROM Content, Text WHERE Content.ContentID = Text.ContentID AND GeoID = " + geoContent.id + " ORDER BY Content.Ordering", conn))
                         using (SqlDataReader drTexts = cmdTexts.ExecuteReader())
                             while (drTexts.Read())
                                 geoContent.texts.Add(new GeoContentText() { ordering = (int)((Int16)drTexts["Ordering"]), headline = drTexts["Headline"].ToString() });
