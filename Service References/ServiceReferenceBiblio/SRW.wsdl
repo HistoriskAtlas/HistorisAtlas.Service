@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsort="http://www.loc.gov/zing/srw/xsortkeys/" xmlns:srw="http://www.loc.gov/zing/srw/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:diag="http://www.loc.gov/zing/srw/diagnostic/" xmlns:srw-interfaces="http://www.loc.gov/zing/srw/interfaces/" xmlns:xcql="http://www.loc.gov/zing/cql/xcql/" name="SRW" targetNamespace="http://www.loc.gov/zing/srw/interfaces/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="srw-types.xsd" namespace="http://www.loc.gov/zing/srw/" />
+    </xsd:schema>
+  </types>
+  <message name="SearchRetrieveRequestMessage">
+    <part name="body" element="srw:searchRetrieveRequest" />
+  </message>
+  <message name="SearchRetrieveResponseMessage">
+    <part name="body" element="srw:searchRetrieveResponse" />
+  </message>
+  <message name="ScanRequestMessage">
+    <part name="body" element="srw:scanRequest" />
+  </message>
+  <message name="ScanResponseMessage">
+    <part name="body" element="srw:scanResponse" />
+  </message>
+  <message name="ExplainRequestMessage">
+    <part name="body" element="srw:explainRequest" />
+  </message>
+  <message name="ExplainResponseMessage">
+    <part name="body" element="srw:explainResponse" />
+  </message>
+  <portType name="SRWPort">
+    <operation name="SearchRetrieveOperation">
+      <input message="srw-interfaces:SearchRetrieveRequestMessage" />
+      <output message="srw-interfaces:SearchRetrieveResponseMessage" />
+    </operation>
+    <operation name="ScanOperation">
+      <input message="srw-interfaces:ScanRequestMessage" />
+      <output message="srw-interfaces:ScanResponseMessage" />
+    </operation>
+  </portType>
+  <portType name="ExplainPort">
+    <operation name="ExplainOperation">
+      <input message="srw-interfaces:ExplainRequestMessage" />
+      <output message="srw-interfaces:ExplainResponseMessage" />
+    </operation>
+  </portType>
+</definitions>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="62704f5f-2181-44c9-b094-cda340696fae" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://webservice.bibliotek.dk/soeg/bibliotek.wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="diagnostics.xsd" MetadataType="Schema" ID="1311bef3-8381-4ab5-b002-4d1269b8e42d" SourceId="1" SourceUrl="http://www.loc.gov/standards/sru/xml-files/diagnostics.xsd" />
+    <MetadataFile FileName="SRW.wsdl" MetadataType="Wsdl" ID="2e13a6a7-d367-4a30-b669-7a786373381d" SourceId="1" SourceUrl="http://www.loc.gov/standards/sru/xml-files/srw-ports.wsdl" />
+    <MetadataFile FileName="xcql.xsd" MetadataType="Schema" ID="54764d0d-bbba-44ca-bbb9-67d52a3c2bac" SourceId="1" SourceUrl="http://www.loc.gov/standards/sru/xml-files/xcql.xsd" />
+    <MetadataFile FileName="SRW1.wsdl" MetadataType="Wsdl" ID="8800099d-4485-43bc-bd3b-69be796463b1" SourceId="1" SourceUrl="http://webservice.bibliotek.dk/soeg/bibliotek.wsdl" />
+    <MetadataFile FileName="SRW2.wsdl" MetadataType="Wsdl" ID="912ed6b0-69a7-4b01-a40b-2f395af3d209" SourceId="1" SourceUrl="http://www.loc.gov/standards/sru/xml-files/srw-bindings.wsdl" />
+    <MetadataFile FileName="srw-types.xsd" MetadataType="Schema" ID="31b4a1fb-f89e-4808-918b-797f6429488c" SourceId="1" SourceUrl="http://www.loc.gov/standards/sru/xml-files/srw-types.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

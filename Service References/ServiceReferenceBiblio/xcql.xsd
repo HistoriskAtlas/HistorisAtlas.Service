@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://www.loc.gov/zing/cql/xcql/" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.loc.gov/zing/cql/xcql/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="operandType">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" ref="prefixes" />
+      <xsd:choice>
+        <xsd:element ref="triple" />
+        <xsd:element ref="searchClause" />
+      </xsd:choice>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="prefixes" type="prefixesType" />
+  <xsd:complexType name="prefixesType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" ref="prefix" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="prefix" type="prefixType" />
+  <xsd:complexType name="prefixType">
+    <xsd:sequence>
+      <xsd:element ref="name" />
+      <xsd:element ref="identifier" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="name" type="xsd:string" />
+  <xsd:element name="identifier" type="xsd:string" />
+  <xsd:element name="triple" type="tripleType" />
+  <xsd:complexType name="tripleType">
+    <xsd:all>
+      <xsd:element ref="boolean" />
+      <xsd:element ref="leftOperand" />
+      <xsd:element ref="rightOperand" />
+    </xsd:all>
+  </xsd:complexType>
+  <xsd:element name="boolean" type="booleanType" />
+  <xsd:complexType name="booleanType">
+    <xsd:all>
+      <xsd:element ref="value" />
+      <xsd:element minOccurs="0" ref="modifiers" />
+    </xsd:all>
+  </xsd:complexType>
+  <xsd:element name="leftOperand" type="operandType" />
+  <xsd:element name="rightOperand" type="operandType" />
+  <xsd:element name="value" type="xsd:string" />
+  <xsd:element name="modifiers" type="modifiersType" />
+  <xsd:complexType name="modifiersType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" ref="modifier" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="modifier" type="modifierType" />
+  <xsd:complexType name="modifierType">
+    <xsd:sequence>
+      <xsd:element ref="type" />
+      <xsd:sequence minOccurs="0">
+        <xsd:element ref="comparison" />
+        <xsd:element ref="value" />
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="type" type="xsd:string" />
+  <xsd:element name="comparison" type="xsd:string" />
+  <xsd:element name="searchClause" type="searchClauseType" />
+  <xsd:complexType name="searchClauseType">
+    <xsd:all>
+      <xsd:element ref="index" />
+      <xsd:element ref="relation" />
+      <xsd:element ref="term" />
+    </xsd:all>
+  </xsd:complexType>
+  <xsd:element name="index" type="xsd:string" />
+  <xsd:element name="relation" type="relationType" />
+  <xsd:complexType name="relationType">
+    <xsd:all>
+      <xsd:element ref="value" />
+      <xsd:element minOccurs="0" ref="modifiers" />
+    </xsd:all>
+  </xsd:complexType>
+  <xsd:element name="term" type="xsd:string" />
+</xsd:schema>

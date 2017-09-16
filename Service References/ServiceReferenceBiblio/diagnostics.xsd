@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://www.loc.gov/zing/srw/diagnostic/" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.loc.gov/zing/srw/diagnostic/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="diagnostic" type="diagnosticType" />
+  <xsd:complexType name="diagnosticType">
+    <xsd:sequence>
+      <xsd:element ref="uri" />
+      <xsd:element minOccurs="0" maxOccurs="1" ref="details" />
+      <xsd:element minOccurs="0" maxOccurs="1" ref="message" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="uri" type="xsd:anyURI" />
+  <xsd:element name="details" type="xsd:string" />
+  <xsd:element name="message" type="xsd:string" />
+</xsd:schema>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:srw-bindings="http://www.loc.gov/zing/srw/srw-bindings/" name="SRW" targetNamespace="http://www.loc.gov/zing/srw/srw-sample-service/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <import namespace="http://www.loc.gov/zing/srw/srw-bindings/" location="http://www.loc.gov/standards/sru/xml-files/srw-bindings.wsdl" />
+  <types />
+  <service name="SRWbibliotekdkSoeg">
+    <port name="SRW" binding="srw-bindings:SRW-SoapBinding">
+      <soap:address location="http://webservice.bibliotek.dk/soeg/" />
+    </port>
+    <port name="ExplainSOAP" binding="srw-bindings:Explain-SoapBinding">
+      <soap:address location="http://webservice.bibliotek.dk/soeg" />
+    </port>
+    <port name="ExplainHTTPGet" binding="srw-bindings:Explain-HTTPGetBinding">
+      <http:address location="http://webservice.bibliotek.dk/soeg" />
+    </port>
+    <port name="ExplainHTTPGetRoot" binding="srw-bindings:Explain-HTTPGetRootBinding">
+      <http:address location="http://webservice.bibliotek.dk/soeg" />
+    </port>
+  </service>
+</definitions>

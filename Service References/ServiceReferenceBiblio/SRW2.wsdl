@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:srw-interfaces="http://www.loc.gov/zing/srw/interfaces/" name="SRW" targetNamespace="http://www.loc.gov/zing/srw/srw-bindings/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <import namespace="http://www.loc.gov/zing/srw/interfaces/" location="srw-ports.wsdl" />
+  <types />
+  <binding name="SRW-SoapBinding" type="srw-interfaces:SRWPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="SearchRetrieveOperation">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ScanOperation">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="Explain-HTTPGetBinding" type="srw-interfaces:ExplainPort">
+    <http:binding verb="GET" />
+    <operation name="ExplainOperation">
+      <http:operation location="?operation=explain" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="body" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="Explain-HTTPGetRootBinding" type="srw-interfaces:ExplainPort">
+    <http:binding verb="GET" />
+    <operation name="ExplainOperation">
+      <http:operation location="" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="body" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="Explain-SoapBinding" type="srw-interfaces:ExplainPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="ExplainOperation">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+</definitions>
