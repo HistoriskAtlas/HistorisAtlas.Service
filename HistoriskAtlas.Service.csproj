@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{535FA366-5929-42D7-91E0-3350915EEE8C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HistoriskAtlas.Service</RootNamespace>
+    <AssemblyName>HistoriskAtlas.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PublishDatabases>false</PublishDatabases>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GPS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\GPS.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\amazon deploy.pubxml" />
+    <None Include="Service References\ServiceReferenceBiblio\configuration91.svcinfo" />
+    <None Include="Service References\ServiceReferenceBiblio\configuration.svcinfo" />
+    <None Include="Service References\ServiceReferenceBiblio\HistoriskAtlas.Service.ServiceReferenceBiblio.explainResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceBiblio\HistoriskAtlas.Service.ServiceReferenceBiblio.scanResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceBiblio\HistoriskAtlas.Service.ServiceReferenceBiblio.searchRetrieveResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceBiblio\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="migrate\default.aspx" />
+    <Content Include="institutions.aspx" />
+    <Content Include="tags.aspx" />
+    <Content Include="maps.aspx" />
+    <Content Include="tilestats.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="dll\GPS.dll" />
+    <Content Include="Global.asax" />
+    <None Include="Service References\ServiceReferenceBiblio\diagnostics.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceBiblio\srw-types.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceBiblio\SRW.wsdl" />
+    <None Include="Service References\ServiceReferenceBiblio\SRW1.wsdl" />
+    <None Include="Service References\ServiceReferenceBiblio\SRW2.wsdl" />
+    <None Include="Service References\ServiceReferenceBiblio\xcql.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.config" />
+    <Content Include="stats.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common.cs" />
+    <Compile Include="compute\Compute.cs" />
+    <Compile Include="model\geocontent\GeoContent5Service.cs" />
+    <Compile Include="migrate\migrateMedia.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="migrate\migrateTagGeo.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="migrate\migrateInstitution.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="migrate\migrateUser.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="migrate\migrateMap.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="migrate\migrateImage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="migrate\migrateTag.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="migrate\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="migrate\migrateGeo.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="model\geotext\GeoText5Service.cs" />
+    <Compile Include="model\geo\Geo5Service.cs" />
+    <Compile Include="model\imagemeta\ImageMeta5Service.cs" />
+    <Compile Include="model\tag\Tag5Service.cs" />
+    <Compile Include="PDF.cs" />
+    <Compile Include="institutions.aspx.cs">
+      <DependentUpon>institutions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="model\pdfmeta\PDFMeta.cs" />
+    <Compile Include="model\pdfmeta\PDFMetaService.cs" />
+    <Compile Include="tags.aspx.cs">
+      <DependentUpon>tags.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="maps.aspx.cs">
+      <DependentUpon>maps.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Handlers.cs" />
+    <Compile Include="HarvestGeos.cs" />
+    <Compile Include="model\geocontent\GeoContent1001.cs" />
+    <Compile Include="model\geotext\GeoText.cs" />
+    <Compile Include="model\geotext\GeoTextService.cs" />
+    <Compile Include="model\geoliterature\GeoLiterature.cs" />
+    <Compile Include="model\geoliterature\GeoLiteratureService.cs" />
+    <Compile Include="Service References\ServiceReferenceBiblio\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="tilestats.aspx.cs">
+      <DependentUpon>tilestats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="model\LatLng\LatLngBox.cs" />
+    <Compile Include="model\text\TextService.cs" />
+    <Compile Include="model\text\Text.cs" />
+    <Compile Include="TileScale.cs" />
+    <Compile Include="MapIcon.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="model\geo\Geo.cs" />
+    <Compile Include="model\geo\GeoService.cs" />
+    <Compile Include="model\geocontent\GeoContent.cs" />
+    <Compile Include="model\geocontent\GeoContentService.cs" />
+    <Compile Include="model\HACoord\HACoord.cs" />
+    <Compile Include="model\imagemeta\ImageMeta.cs" />
+    <Compile Include="model\imagemeta\ImageMetaService.cs" />
+    <Compile Include="model\institution\Institution.cs" />
+    <Compile Include="model\institution\InstitutionService.cs" />
+    <Compile Include="model\LatLng\LatLng.cs" />
+    <Compile Include="model\map\MapRelevantService.cs" />
+    <Compile Include="model\map\Map.cs" />
+    <Compile Include="model\map\MapService.cs" />
+    <Compile Include="model\stat\Stat.cs" />
+    <Compile Include="model\stat\StatService.cs" />
+    <Compile Include="model\tagcategory\TagCategory.cs" />
+    <Compile Include="model\tagcategory\TagCategoryService.cs" />
+    <Compile Include="model\tag\Tag.cs" />
+    <Compile Include="model\tag\TagService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Image.cs" />
+    <Compile Include="stats.aspx.cs">
+      <DependentUpon>stats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceReferenceBiblio\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49427</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
