@@ -38,7 +38,7 @@ namespace HistoriskAtlas.Service
             {
                 conn.Open();
 
-                SqlCommand cmd = new SqlCommand("SELECT Headline, Text FROM Content, Text WHERE Content.ContentID = Text.ContentID AND GeoID = " + routeData.Values["id"] + " AND Ordering = " + routeData.Values["ordering"], conn);
+                SqlCommand cmd = new SqlCommand("SELECT Headline, Text FROM Content, Text WHERE Content.ContentID = Text.ContentID AND GeoID = " + routeData.Values["id"] + " AND Content.Ordering = " + routeData.Values["ordering"], conn);
 
                 using (SqlDataReader dr = cmd.ExecuteReader())
                 {
